@@ -32,7 +32,7 @@ print('Benchmarking GENet-large')
 ImageNet.benchmark(
     model=model,
     paper_model_name='GENet-large',
-    paper_arxiv_id='2003.13630',
+    paper_arxiv_id='2006.14090',
     input_transform=transformer,
     batch_size=128,
     num_workers=8,
@@ -69,7 +69,7 @@ print('Benchmarking GENet-normal')
 ImageNet.benchmark(
     model=model,
     paper_model_name='GENet-normal',
-    paper_arxiv_id='2003.13630',
+    paper_arxiv_id='2006.14090',
     input_transform=transformer,
     batch_size=128,
     num_workers=8,
@@ -106,7 +106,7 @@ print('Benchmarking GENet-light')
 ImageNet.benchmark(
     model=model,
     paper_model_name='GENet-light',
-    paper_arxiv_id='2003.13630',
+    paper_arxiv_id='2006.14090',
     input_transform=transformer,
     batch_size=128,
     num_workers=8,
