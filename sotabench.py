@@ -1,7 +1,7 @@
 import gc
+import math
 
 import torch
-import math
 from torchbench.datasets.utils import download_file_from_google_drive
 from torchbench.image_classification import ImageNet
 from torchvision.transforms import transforms
@@ -27,6 +27,16 @@ transformer = transforms.Compose(transform_list)
 model = model.cuda().half()
 model.eval()
 
+
+def send_data(input, target, device, dtype=torch.float16, non_blocking: bool = True):
+    input = input.to(device=device, dtype=dtype, non_blocking=non_blocking)
+
+    if target is not None:
+        target = target.to(device=device, dtype=dtype, non_blocking=non_blocking)
+
+    return input, target
+
+
 print('Benchmarking GENet-large')
 # Run the benchmark
 ImageNet.benchmark(
@@ -34,6 +44,7 @@ ImageNet.benchmark(
     paper_model_name='GENet-large',
     paper_arxiv_id='2006.14090',
     input_transform=transformer,
+    send_data_to_device=send_data,
     batch_size=128,
     num_workers=8,
     num_gpu=1,
@@ -71,6 +82,7 @@ ImageNet.benchmark(
     paper_model_name='GENet-normal',
     paper_arxiv_id='2006.14090',
     input_transform=transformer,
+    send_data_to_device=send_data,
     batch_size=128,
     num_workers=8,
     num_gpu=1,
@@ -108,6 +120,7 @@ ImageNet.benchmark(
     paper_model_name='GENet-light',
     paper_arxiv_id='2006.14090',
     input_transform=transformer,
+    send_data_to_device=send_data,
     batch_size=128,
     num_workers=8,
     num_gpu=1,
