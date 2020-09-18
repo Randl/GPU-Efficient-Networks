@@ -11,7 +11,7 @@ import GENet
 # GENet-large
 file_id = '1xuyW2GB_kUfJNf2G146rk1sdKuYGxWlE'
 destination = './GENet_params/'
-filename = 'GENEt_large.pth'
+filename = 'GENet_large.pth'
 download_file_from_google_drive(file_id, destination, filename=filename)
 
 input_image_size = 256
@@ -49,7 +49,7 @@ torch.cuda.empty_cache()
 # GENet-normal
 file_id = '1rpL0BKI_l5Xg4vN5fHGXPzTna5kW9hfs'
 destination = './GENet_params/'
-filename = 'GENEt_normal.pth'
+filename = 'GENet_normal.pth'
 download_file_from_google_drive(file_id, destination, filename=filename)
 input_image_size = 192
 model = GENet.genet_normal(pretrained=True, root='./GENet_params/')
@@ -86,7 +86,7 @@ torch.cuda.empty_cache()
 # GENet-light
 file_id = '1jAkklQlQFPZi4odKUvbKEsNPYSS76GAv'
 destination = './GENet_params/'
-filename = 'GENEt_small.pth'
+filename = 'GENet_small.pth'
 download_file_from_google_drive(file_id, destination, filename=filename)
 input_image_size = 192
 model = GENet.genet_small(pretrained=True, root='./GENet_params/')
