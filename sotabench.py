@@ -1,7 +1,7 @@
 import gc
 
 import torch
-from docutils.nodes import math
+import math
 from torchbench.datasets.utils import download_file_from_google_drive
 from torchbench.image_classification import ImageNet
 from torchvision.transforms import transforms
