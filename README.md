@@ -112,3 +112,5 @@ output = model(x)
 
 # License
 Copyright (C) 2010-2020 Alibaba Group Holding Limited. Released under the Apache License.
+## `sotabench_setup.sh`
+The code in `sotabench_setup.sh` is by @hussam789 (https://github.com/hussam789/TResNet)
